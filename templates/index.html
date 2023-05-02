@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Eplay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url("static/index.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-color:white ;	 */
+
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .background {
+            background: black;
+            background-blend-mode: darken;
+            background-size: cover;
+            animation: fadeInAnimation ease 3s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+            /* background-color:white ;	 */
+
+        }
+        @keyframes fadeInAnimation {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+
+        .nav-list {
+            width: 70%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 150px;
+            height: 50px;
+            border-radius: 80px;
+
+        }
+
+        .nav-list li {
+            list-style: none;
+            padding: 26px 30px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+
+        .nav-list li a:hover {
+            color: pink;
+        }
+
+        .lg_btn {
+            margin-left: 6rem;
+            /* padding: 10px 1rem; */
+            border-radius: 50px;
+            color:rgb(0, 0, 0);
+            background-color: rgb(52, 199, 205);
+
+            cursor: auto;
+            position: absolute;
+            right: 450px;
+            margin-top:-20px;
+        }
+
+        .bg_btn {
+            margin-left: 15rem;
+            /* padding: 10px 1rem; */
+            border-radius: 70px;
+            color: rgb(5, 0, 0);
+            background: #15cedf;
+            cursor: auto;
+			
+
+        }
+
+
+        .rightnav {
+            width: 30%;
+            text-align: right;
+        }
+
+        #search {
+            padding: 5px;
+            font-size: 17px;
+            border: 2px solid grey;
+            border-radius: 9px;
+        }
+
+        .firstsection {
+
+            height: 500px;
+
+
+        }
+
+        .secondsection {
+            background-color: rgba(243, 234, 109, 0.2);
+            height: 400px;
+        }
+
+        .box-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            max-width: 75%;
+            border-radius: 10px;
+            border-top-right-radius: 32px;
+            border-bottom-right-radius: 32px;
+            margin:auto ;
+            margin-top: 2cm;
+            height: 90%;
+            background-image: url("static/back.jpg");
+            image-resolution: 520px 1200px ;
+			background-repeat: no-repeat;
+        }
+        
+        .firsthalf {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+
+
+        .name {
+            font-family: 'Piazzolla', serif;
+            font-weight: bold;
+            font-size: 50px;
+            position: absolute;
+            /* top: 109px; */
+            right: 50%;
+           
+        }
+
+        .text-small {
+            font-size: 18px;
+            color: #a5d8dd;
+            
+        }
+        .text-medium{
+            font-size: 25px;
+            color: #2329db;
+            
+        }
+
+        .btn {
+            padding: 8px 20px;
+            margin: 7px 0;
+            border: 2px solid white;
+            border-radius: 8px;
+            background: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-sm {
+            padding: 6px 10px;
+            vertical-align: middle;
+        }
+
+        .section {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .section-Left {
+            flex-direction: row-reverse;
+        }
+
+        .paras {
+            padding: 0px 65px;
+        }
+
+
+
+        .center {
+            text-align: center;
+        }
+
+        .cri {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+
+        #img {
+            max-width: 50%;
+            max-height: 10%;
+        }
+
+        #imgb {
+            padding: 20px;
+        }
+
+        .tc {
+            font-size: 20px;
+            padding-left: 20px;
+        }
+
+        .bk {
+            margin-left: 2rem;
+            padding: 10px 1rem;
+            border-radius: 20px;
+            color: white;
+            background: rgb(43, 177, 218);
+            cursor: auto;
+        }
+
+        .voli {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .vb {
+            font-size: 20px;
+            padding-left: 20px;
+        }
+
+        .bad {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .bd {
+            font-size: 20px;
+            padding-left: 20px;
+
+        }
+
+        .blog {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .blog-header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .blog-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .blog-subtitle {
+            font-size: 24px;
+            color: black;
+        }
+
+        .blog-post {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid lightgray;
+        }
+
+        .blog-post-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .blog-post-date {
+            font-size: 18px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+
+        .blog-post-content {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        #bat {
+            width: 600px;
+            height: 300px;
+        }
+
+        .text-footer {
+            text-align: center;
+            padding: 30px 0;
+            font-family: 'Ubuntu', sans-serif;
+            display: flex;
+            justify-content: center;
+            color: white;
+            background-color: black;
+        }
+    
+
+        .vrg {
+            width: 600px;
+            height: 250px;
+            margin: 0px;
+        }
+
+        .cimg {
+            width: 600px;
+            height: 250px;
+            margin: 0px;
+        }
+        .log{
+            margin-left: 300px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo">
+                <img src="static/lgg.jpg">
+            </div>
+            <!-- <li><a href="#web">Home</a></li> -->
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li class="log"><a href="/login_form">login</a></li>
+            <li><a href="/sign_up">Sign up</a></li>
+            <!-- <l1><button class="lg_btn"><a href="/login_form">login</a></button></l1>
+            <li><button class="bg_btn"><a href="/sign_up">sign up </a></button></li> -->
+
+
+      
+
+           
+        </ul>
+        <div class="rightNav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+
+    <div class="name">
+        <h6 class="name" id="web">Eplay</h6>
+    </div>
+
+    <section class="firstsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <!-- <p style="background-image: url('static/ground.jpeg');"></p> -->
+                <!-- background-image: url("static/ground.jpeg"); -->
+				<!-- <h6 class="text-big" id="web">Eplay</h6> -->
+                <h1 class="text-medium" id="web">Explore</h1>
+                <h1 class="text-medium" id="web">Play</h1>
+                <h1 class="text-medium" id="web">learn</h1>
+                <h1 class="text-medium" id="web">As much as</h1>
+                <h1 class="text-medium" id="web">You can...</h1>
+       
+
+        
+
+
+            </div>
+        </div>
+    </section>
+    <center>
+      <p class="text-small"><h2>
+                  We are a platform where we help you to book a place to play
+					</h2>
+                </p>
+                <h2>If you are new user please signup as you will get regular discounts</h2>
+    </center>
+
+    <body>
+        <div class="blog">
+            <header class="blog-header pure-g">
+                <div class="pure-u-1">
+                    <h1 class="blog-title">
+                        Welcome to Eplay
+                    </h1>
+                    <p class="blog-subtitle">
+                        Play games in a  space where you feel free
+
+                    </p>
+                </div>
+            </header>
+            <div class="blog-posts pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <article class="blog-post">
+                        <h2 class="blog-post-title">What are we</h2>
+                        <!-- <p class="blog-post-date">January 1, 2021</p> -->
+                        <p class="blog-post-content">
+                            We provide indoor and outdoor games for low cost
+                            we arrange every requirement for matches. Last year
+                            district level tournoment were held by us.
+							
+                        </p>
+                    </article>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <article class="blog-post">
+                        <h2 class="blog-post-title">Goals</h2>
+                        <!-- <p class="blog-post-date">January 2, 2021</p> -->
+                        <p class="blog-post-content">
+                            
+                            We are planning to establish our company through out
+                            the city. And to give good experience to  customers.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        
+        <h1>Cricket</h1>
+        
+        <div class="cri">
+            <div class="image">
+                <img class="cimg" src="static/mimg.png">
+            </div>
+            <div class="tc">
+                <p>We provide ground and other things to play,we arrange tournament matches also based on customers
+                    request. we charge per hour</p>
+                <l1><button class="bk"><a href="book">Book Now</a></button></l1>
+
+            </div>
+        </div>
+    
+        <h1> Volley Ball</h1>
+    
+        <div class="voli">
+            <div class="imagev">
+                <img class='vrg' src="static/vb.png">
+            </div>
+            <div class="vb">
+                <p>We have a outdoor Volleyball Court which is well maintained from long time and you 
+					should book before 2 hours .
+				</p>
+
+                <l1><button class="bk"><a href="book">Book Now</a></button></l1>
+            </div>
+        </div>
+        
+        <h1>Badminton</h1>
+        
+        <div class="bad">
+            <div class="imageb">
+                <img id=bat src="static/bd.png">
+            </div>
+            <div class="tc">
+                <p>We are having an indoor badminton court.If needed we can provide the badminton gear which include shoes (extra charges)</p>
+
+                <l1><button class="bk"><a href="book">Book Now</a></button></l1>
+            </div>
+        </div>
+		<div class="pure-u-1 pure-u-md-1-2">
+			<article class="blog-post">
+				<h2 class="blog-post-title">Note</h2>
+				<!-- <p class="blog-post-date">January 2, 2021</p> -->
+				<p class="blog-post-content">
+					After booking the slot in the website there is no need to do the payment immediately you can pay after the play time.
+				</p>
+			</article>
+		</div>
+
+
+
+        <footer class="background">
+            <p class="text-footer">
+                Copyright ©-All rights are reserved
+            </p>
+
+
+        </footer>
+    </body>
+
+</html>

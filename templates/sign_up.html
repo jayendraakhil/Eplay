@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+        #sign {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #c3c3c3;
+            padding: 10%;
+            font-size: 25px;
+        }
+
+        body {
+            background-image: url("static/n.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #success-msg {
+            display: none;
+            color: green;
+            font-size: 20px;
+        }
+
+        .form-label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .form-input {
+            margin-top: 5px;
+        }
+
+        .form-input input {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .form-submit {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-submit input {
+            padding: 5px 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="sign">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <p><center><h1>Sign Up</h1></center></p>
+                <center>
+                    <form name="sentMessage" id="signup" action="/sign_up" method="post" novalidate>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <lable>Email</lable>
+                                <input type="email" class="form-control" placeholder="email" id="email" name='email'
+                                    required data-validation-required-message="Please enter your email id.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <lable>Password</lable>
+                                <input type="password" class="form-control" placeholder="password" id="password"
+                                    name='password' required data-validation-required-message="password">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <lable>Confirm Password</lable>
+                                <input type="password" class="form-control" placeholder="confirm_password" id="confirm_password"
+                                    name='confirm_password' required data-validation-required-message="confirm_password">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <input type="checkbox" checked="checked" name="remember" style="margin: 15px">Remember me
+                        <p>
+                        <pre>              <h2>                  By creating an account you agree to our <a href="#" style="color:rgb(14, 134, 255)">Terms & Privacy</a></pre>
+                        </h2>
+                        </p>
+
+                        <div id="success"></div>
+                        <div class="form-group">
+                            <button type="submit" class="signup" id="sendMessageButton">Sign Up</button>
+                            <button type="reset" class="cancel">reset</button>
+                            <button><a href="http://127.0.0.1:8080/">back</a></button>
+                        </div>
+                    </form>
+                </center>
+            </div>
+        </div>
+    </div>
+                 
+</body>
+
+</html>
+

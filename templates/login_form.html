@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <style>
+        Body {
+            font-family: Calibri, Helvetica, sans-serif;
+            /* background-color: pink; */
+            background-image: url("static/about.png");
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        button {
+            background-color: #ea2741;
+            width: 90%;
+            color: orange;
+            padding: 15px;
+            margin: 10px 0px;
+            border: none;
+            cursor: pointer;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 50%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+        input[type=text],
+        input[type=email]{
+            width: 50%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            margin: 10px 5px;
+        }
+
+
+        .login {
+            padding: 25px;
+            background-color: lightblue;
+            /* background-image:url("static/n.png"); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <p>
+                <h1>Login Form</h1>
+                </p>
+                <center>
+                    <form name="sentMessage" id="Loginform" action="/login_form" method="post" novalidate>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>email</label>
+                                <input type="email" class="form-control" placeholder="email" id="email"
+                                    name="email" required
+                                    data-validation-required-message="Please enter your user name">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="password" id="password"
+                                    name="password" required
+                                    data-validation-required-message="Please enter your password">
+                                <p class="help-block text-danger"></p>
+
+                            </div>
+                        </div>
+
+                        <div id="success"></div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>
+                        </div>
+
+
+
+
+                        <button type="reset" class="cancelbtn"> reset</button>
+                       
+                        <a href="/sign_up">Forgot password? </a>
+                        <button><a href="http://127.0.0.1:8080/">back</a></button>
+
+                    </form>
+                </center>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+      

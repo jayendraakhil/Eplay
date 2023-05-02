@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>About Us</title>
+    <style>
+        body {
+            /* font-family: Arial, Helvetica, sans-serif; */
+            margin: 0;
+            background-image: url("static/about.png");
+            background-repeat: repeat;
+            background-size: cover;
+
+        }
+
+        /* this is for about.html page  */
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: hwb(197 29% 38%);
+            color: white;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            cursor: pointer;
+            height: 70px;
+        }
+
+        .background {
+            background: black;
+            background-blend-mode: darken;
+            background-size: cover;
+            animation: fadeInAnimation ease 3s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+            /* background-color:white ;	 */
+
+        }
+        @keyframes fadeInAnimation {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+
+        .nav-list {
+            width: 70%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 150px;
+            height: 50px;
+            border-radius: 80px;
+            margin-left: -57px;
+
+        }
+
+        .nav-list li {
+            list-style: none;
+            padding: 26px 30px;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+
+        .nav-list li a:hover {
+            color: pink;
+        }
+
+        .lg_btn {
+            margin-left: 6rem;
+            /* padding: 10px 1rem; */
+            border-radius: 50px;
+            color:rgb(0, 0, 0);
+            background-color: rgb(52, 199, 205);
+
+            cursor: auto;
+            position: absolute;
+            right: 450px;
+            margin-top:-20px;
+        }
+
+        .bg_btn {
+            margin-left: 15rem;
+            /* padding: 10px 1rem; */
+            border-radius: 70px;
+            color: rgb(5, 0, 0);
+            background: #15cedf;
+            cursor: auto;
+			
+
+        }
+
+
+        .rightnav {
+            width: 30%;
+            text-align: right;
+        }
+
+        #search {
+            padding: 5px;
+            font-size: 17px;
+            border: 2px solid grey;
+            border-radius: 9px;
+        }
+
+        .firstsection {
+
+            height: 500px;
+
+
+        }
+
+        .secondsection {
+            background-color: rgba(243, 234, 109, 0.2);
+            height: 400px;
+        }
+
+        .box-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            max-width: 75%;
+            border-radius: 10px;
+            border-top-right-radius: 32px;
+            border-bottom-right-radius: 32px;
+            margin:auto ;
+            margin-top: 2cm;
+            height: 90%;
+            background-image: url("static/back.jpg");
+            image-resolution: 520px 1200px ;
+			background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo">
+                <img src="static/lgg.jpg">
+            </div>
+            <!-- <li><a href="#web">Home</a></li> -->
+            <li><a href="/contact">Contact Us</a></li>
+            <!-- <li><a href="/about">About Us</a></li> -->
+            <li><a href="/login_form">login</a></li>
+            <li><a href="/sign_up">Sign up</a></li>
+            <!-- <l1><button class="lg_btn"><a href="/login_form">login</a></button></l1>
+            <li><button class="bg_btn"><a href="/sign_up">sign up </a></button></li> -->  
+        </ul>
+        <div class="rightNav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+
+    <div class="about-section">
+        <h1>About Us </h1>
+        <p>We Provide indoor and outdoor games for less cost
+          we arrange every requirement for matches. Last year
+          district level tournoment was hosted by us..</p>
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <alt="Abhi" style="width:100%">
+                    <div class="container">
+                        <h2>Abhi Chandra</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Retired Cricketer who played for nationals.</p>
+                        <p>abhi@example.com</p>
+                        <!-- <p><button class="button">Contact</button></p> -->
+                    </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <alt="Rohit" style="width:100%">
+                    <div class="container">
+                        <h2>Rohit</h2>
+                        <p class="title">Director</p>
+                        <p>He has an experience of 10 years in IT sector. he is one of the key member to our company,
+                            one of a founder.</p>
+                        <p>rohit@example.com</p>
+                        <!-- <p><button class="button">Contact</button></p> -->
+                    </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <alt="Revanth" style="width:100%">
+                    <div class="container">
+                        <h2>Revanth</h2>
+                        <p class="title">Manager</p>
+                        <p> He coordinates clients and others.</p>
+                        <p>revanth@example.com</p>
+                        <!-- <p><button class="button">Contact</button></p> -->
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-2">
+      <article class="blog-post">
+          <h2 class="blog-post-title">Future Goals</h2>
+          <!-- <p class="blog-post-date">January 2, 2021</p> -->
+          <p class="blog-post-content">
+              We have regular discounts and we are planning to establish our company throughout
+              Hyderabad and arrange an easy way to users to book.
+          </p>
+      </article>
+  </div>
+</body>
+
+</html
