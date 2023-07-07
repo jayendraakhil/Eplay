@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Place</title>
+    <style>
+        #container {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #c3c3c3;
+            padding: 10%;
+            font-size: 25px;
+        }
+
+        body {
+            background-image: url("static/bd.png");
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        #success-msg {
+            display: none;
+            color: green;       
+            font-size: 20px;
+        }
+
+        .form-label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .form-input {
+            margin-top: 5px;
+        }
+
+        .form-input input {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .form-submit {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-submit input {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <h2>Your process is almost done please fill the form</h2>
+    </p>
+    <div id="booki">
+        <center>
+
+            <form name="sendMessageButton" id= "Book" action="/bookb" method="post" novalidate>
+                <div class="form-label">
+                    <div class="form-group floating-label-form-group controls"></div>
+                    <label>name</label>
+                    <input type="text" class="form-control"  placeholder="Enter Name" name='name' id="name"
+                    required data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-label">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required
+                               pattern="[a-zA-z0-9]+@+MNC.com"
+                            data-validation-required-message="Please enter your email address."
+                            oninvalid="setCustomValidity('Please enter a valid email address')"
+                            onchange="try{setCustomValidity('')}catch(e){}">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                      <label>Phone Number</label>
+                      <input type="tel" class="form-control" placeholder="Phone Number" name="phone" id="phone" required
+                             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                             data-validation-required-message="Please enter your phone number in the format 123-456-7890.">
+                      <p class="help-block text-danger"></p>
+                    </div>
+                  </div>
+            
+                <!-- <div class="form-label">
+                    <label for="date_and_time"><b>date and time</b></label>
+                <div class="form-input">
+                    <input type="datetime-local" />
+                </div>
+                 -->
+                 
+                <div class="form-label">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>date_and_time</label>
+                        <input type="datetime-local" class="form-control" placeholder="date_and_time"
+                            name="date_and_time" id="date_and_time" required data-validation-required-message="">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div id="success"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" id="sendMessageButton">submit</button>
+                    </div>
+                </div>
+
+            </form>
+            <!-- <p id="success-msg">Form submitted successfully!</p> -->
+
+        </center>
+    </div>
+</body>
+</html>
