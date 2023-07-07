@@ -26,7 +26,6 @@ class Contacts(db.Model):
     email = db.Column(db.String(50), nullable=False)
     timestamp = db.Column(db.DateTime, nullable=False)
 
-
 class Loginn(db.Model):
     '''
     sno,username,password,timestamp
@@ -66,12 +65,33 @@ class Booki(db.Model):
     date_and_time = db.Column(db.DateTime, nullable=False)
     timestamp = db.Column(db.DateTime, nullable=False)
 
+class Bookiv(db.Model):
+    '''
+    sno,name,email,phone,date_and_time,timestamp
+    '''
+    sno = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    email = db.Column(db.String(50), nullable=False)
+    phone = db.Column(db.String(10), nullable=False)
+    date_and_time = db.Column(db.DateTime, nullable=False)
+    timestamp = db.Column(db.DateTime, nullable=False)
+
+class Bookib(db.Model):
+    '''
+    sno,name,email,phone,date_and_time,timestamp
+    '''
+    sno = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    email = db.Column(db.String(50), nullable=False)
+    phone = db.Column(db.String(10), nullable=False)
+    date_and_time = db.Column(db.DateTime, nullable=False)
+    timestamp = db.Column(db.DateTime, nullable=False)
 @app.route("/")
 def home():
     app.logger.info('Homepage accessed.')
     return render_template("index.html")
 
-@app.route("/index1")
+@app.route("/")
 def home1():
     app.logger.info('Homepage 1 accessed.')
     return render_template("index1.html")
@@ -120,8 +140,8 @@ def contact():
         entry = Contacts(name=name, phone_num=phone, Subject=Subject, email=email,timestamp=timestamp)
         db.session.add(entry)
         db.session.commit()
-        app.logger.info('Contact entry added successfully')
-        return "Contact entry added successfully!"
+        app.logger.info('Our team will reach out to you')
+        return "Our team will reach out to you "
     app.logger.info("contact page accessed")
     return render_template("contact.html")
 
@@ -146,8 +166,8 @@ def contact1():
         entry = Contacts(name=name, phone_num=phone, Subject=Subject, email=email,timestamp=timestamp)
         db.session.add(entry)
         db.session.commit()
-        app.logger.info('Contact entry added successfully')
-        return "Contact entry added successfully!"
+        app.logger.info('Our team will reach out to you')
+        return "Our team will reach out to you"
     app.logger.info("contact 1 page accessed")
     return render_template("contact1.html")
 
@@ -176,9 +196,11 @@ def contact2():
         db.session.add(entry)
         db.session.commit()
         app.logger("Contact entry added successfully")
-        return "Contact entry added successfully!"
-    app.logger.info("contact 2 page accessed")
+        return "Our team will reach out to you"
+    app.logger.info("Our team will reach out to you")
     return render_template("contact2.html")
+
+
 
 
 @app.route("/login_form", methods=['GET', 'POST'])
@@ -215,7 +237,6 @@ def logg():
                     return "Invalid username or password"
     app.logger.info("login page accessed")
     return render_template('login_form.html')
-
     
 
 @app.route("/sign_up", methods=['GET', 'POST'])
@@ -252,14 +273,14 @@ def sign_up():
         db.session.commit()
 
         app.logger.info('User signed up successfully.')
-        return render_template('index1.html' ,ans="User signed up successfully.")
+        return render_template('login_form.html' ,ans="User signed up successfully.")
     else:
         app.logger.debug('Returning sign-up page.')
         return render_template('sign_up.html')
 
 
-@app.route("/book", methods = ['GET','POST'])
-def book():
+@app.route("/bookc", methods = ['GET','POST'])
+def bookc():
     if(request.method=='POST'):
         '''Add entry to the database'''
         name = request.form.get('name')
@@ -298,12 +319,95 @@ def book():
         app.logger.info('Booking made successfully.')
         return"Booked successfully"
     app.logger.debug('Returning booking page.')
-    return render_template("book.html")
+    return render_template("bookc.html")
 
+@app.route("/bookv", methods = ['GET','POST'])
+def bookv():
+    if(request.method=='POST'):
+        '''Add entry to the database'''
+        name = request.form.get('name')
+        email =request.form.get('email')
+        phone= request.form.get('phone')
+        date_and_time= request.form.get('date_and_time')
+        timestamp = datetime.datetime.now()
+
+        input_datetime = datetime.datetime.strptime(date_and_time, '%Y-%m-%dT%H:%M')
+        current_datetime = datetime.datetime.now()
+        if input_datetime <= current_datetime:
+            app.logger.error('Invalid date and time entered.')
+            return "Invalid date and time. Please try again."
+        
+
+
+
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+            app.logger.error("Invalid email address entered.")
+            return "Invalid email address. Please try again."
+
+        phone_regex = r'^\d{10,12}$'
+        if not re.match(phone_regex, phone):
+            error = "Phone number must be between 10 and 12 digits."
+            app.logger.error('Invalid Phone Number entered.')
+            return "Invalid Phone Number. Please try again."
+        
+        existing_booking = Bookiv.query.filter_by(date_and_time=date_and_time).first()
+        if existing_booking:
+            app.logger.error("The requested date and time slot is already booked.")
+            return "The requested date and time slot is already booked. Please choose another slot."
+
+        entry = Bookiv(name=name,email=email, phone= phone, date_and_time=date_and_time ,timestamp= timestamp)
+        db.session.add(entry)
+        db.session.commit()
+        app.logger.info('Booking made successfully.')
+        return"Booked successfully"
+    app.logger.debug('Returning booking page.')
+    return render_template("bookv.html")
+
+@app.route("/bookb", methods = ['GET','POST'])
+def bookb():
+    if(request.method=='POST'):
+        '''Add entry to the database'''
+        name = request.form.get('name')
+        email =request.form.get('email')
+        phone= request.form.get('phone')
+        date_and_time= request.form.get('date_and_time')
+        timestamp = datetime.datetime.now()
+
+        input_datetime = datetime.datetime.strptime(date_and_time, '%Y-%m-%dT%H:%M')
+        current_datetime = datetime.datetime.now()
+        if input_datetime <= current_datetime:
+            app.logger.error('Invalid date and time entered.')
+            return "Invalid date and time. Please try again."
+        
+
+
+
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+            app.logger.error("Invalid email address entered.")
+            return "Invalid email address. Please try again."
+
+        phone_regex = r'^\d{10,12}$'
+        if not re.match(phone_regex, phone):
+            error = "Phone number must be between 10 and 12 digits."
+            app.logger.error('Invalid Phone Number entered.')
+            return "Invalid Phone Number. Please try again."
+        
+        existing_booking = Bookib.query.filter_by(date_and_time=date_and_time).first()
+        if existing_booking:
+            app.logger.error("The requested date and time slot is already booked.")
+            return "The requested date and time slot is already booked. Please choose another slot."
+
+        entry = Bookib(name=name,email=email, phone= phone, date_and_time=date_and_time ,timestamp= timestamp)
+        db.session.add(entry)
+        db.session.commit()
+        app.logger.info('Booking made successfully.')
+        return"Booked successfully"
+    app.logger.debug('Returning booking page.')
+    return render_template("bookb.html")
 
 
 if __name__ == '__main__':
     with app.app_context():
 
         db.create_all()
-        app.run(port=8080)
+        app.run(debug=True,port=8080)
