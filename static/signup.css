@@ -1,0 +1,43 @@
+#sign {
+    width: 200px;
+    height: 300px;
+    border: 1px solid #c3c3c3;
+    padding: 10%;
+    font-size: 25px;
+}
+
+body {
+    background-image: url("b.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#success-msg {
+    display: none;
+    color: green;
+    font-size: 20px;
+}
+
+.form-label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-input {
+    margin-top: 5px;
+}
+
+.form-input input {
+    width: 100%;
+    padding: 5px;
+}
+
+.form-submit {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-submit input {
+    padding: 5px 10px;
+}

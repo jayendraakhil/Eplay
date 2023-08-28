@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form </title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <title>Employee Login</title>
     <style>
 html{
 height: 100%;
@@ -14,8 +13,7 @@ body{
 margin: 0;
 padding: 0;
 font-family: sans-serif;
-/* background: linear-gradient( #243b55); */
-background-image: url("static/aaa.jpg");
+background-image: url("static/n.png");
 background-repeat: no-repeat;
 background-size:100% ;
 }
@@ -118,9 +116,10 @@ font-display: auto;
 </head>
 <body>
     <div class="login-box">
-        <h2>Login</h2>
+        <h2>Employee Login</h2>
+        <h5>If not an employee please donot Login</h5>
         <!-- <form> -->
-         <form action="/login_form" method="POST">
+         <form action="/slogin" method="POST">
              <!-- Rest of the form code -->
              <!-- ... -->
              <!-- <button type="submit">Submit</button>
@@ -141,7 +140,7 @@ font-display: auto;
             <button type="submit" class="login" id="sendMessageButton">login</button>
             <!-- <div id='one'><a href="/"><button class="" id="sendMessageButton" >back </button></a></div> -->
             <div id='one'><a href="/">Back</a></div>
-            <div = re><button type="reset" class="cancelbtn"> reset</button></div>
+            <div= re><button type="reset" class="cancelbtn"> reset</button></div>
               
         </form>
     </div>

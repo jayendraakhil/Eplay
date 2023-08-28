@@ -2,53 +2,11 @@
 <html>
 
 <head>
-    <style>
-
-        #sign {
-            width: 200px;
-            height: 300px;
-            border: 1px solid #c3c3c3;
-            padding: 10%;
-            font-size: 25px;
-        }
-
-        body {
-            background-image: url("static/n.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #success-msg {
-            display: none;
-            color: green;
-            font-size: 20px;
-        }
-
-        .form-label {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        .form-input {
-            margin-top: 5px;
-        }
-
-        .form-input input {
-            width: 100%;
-            padding: 5px;
-        }
-
-        .form-submit {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .form-submit input {
-            padding: 5px 10px;
-        }
-    </style>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
 </head>
 
 <body>
@@ -84,7 +42,7 @@
                         </div>
                         <input type="checkbox" checked="checked" name="remember" style="margin: 15px">Remember me
                         <p>
-                        <pre>              <h2>                  By creating an account you agree to our <a href="#" style="color:rgb(14, 134, 255)">Terms & Privacy</a></pre>
+                        <pre>              <h2>                  By creating an account you agree to our <a href="#" style="color:rgb(255, 14, 14)">Terms & Privacy</a></pre>
                         </h2>
                         </p>
 
@@ -103,4 +61,3 @@
 </body>
 
 </html>
-
